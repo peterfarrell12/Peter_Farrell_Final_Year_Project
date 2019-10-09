@@ -9,15 +9,6 @@ class ProjectHome extends StatefulWidget {
 }
 
 class _ProjectHomeState extends State<ProjectHome> {
-   void onAddButtonTapped(int index) {
-
-  // use this to animate to the page
-  pageController.animateToPage(index);
-
-  // or this to jump to it without animating
-  pageController.jumpToPage(index);
-}
-
 
 
 
@@ -155,7 +146,7 @@ class _ProjectHomeState extends State<ProjectHome> {
                             ),
                             GestureDetector(
                               onTap: (){
-                                pageController.jumpTo(2);
+                                pageController.jumpToPage(2);
                               },
                                                           child: Card(
                                 shape: RoundedRectangleBorder(
