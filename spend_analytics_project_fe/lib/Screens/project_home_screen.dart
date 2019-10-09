@@ -114,7 +114,7 @@ class _ProjectHomeState extends State<ProjectHome> {
                                       child: Text(
                                         "Invoice Extraction",
                                     style:
-                                        TextStyle(fontWeight: FontWeight.bold),
+                                        TextStyle(fontWeight: FontWeight.bold, color: Colors.white),
                                   )),
                                 ),
                               ),
@@ -139,7 +139,7 @@ class _ProjectHomeState extends State<ProjectHome> {
                                     child: Center(
                                         child: Text(
                                       "Spend Classification",
-                                      style: TextStyle(fontWeight: FontWeight.bold),
+                                      style: TextStyle(fontWeight: FontWeight.bold,color: Colors.white),
                                     )),
                                   ),
                                 ),
@@ -164,7 +164,7 @@ class _ProjectHomeState extends State<ProjectHome> {
                                   child: Center(
                                       child: Text(
                                     "Reporting",
-                                    style: TextStyle(fontWeight: FontWeight.bold),
+                                    style: TextStyle(fontWeight: FontWeight.bold,color: Colors.white),
                                   )),
                                 ),
                               ),

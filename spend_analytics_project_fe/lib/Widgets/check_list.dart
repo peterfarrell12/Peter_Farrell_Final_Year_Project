@@ -3,12 +3,11 @@ import 'package:intl/intl.dart';
 import '../Models/project.dart';
 import '../Screens/project_home_screen.dart';
 import '../Models/check.dart';
-import 'package:circular_check_box/circular_check_box.dart';
 
 class CheckList extends StatefulWidget {
   final List<Check> checks;
-
-  CheckList(this.checks);
+  final Color checkColor;
+  CheckList(this.checks, this.checkColor);
 
   @override
   _CheckListState createState() => _CheckListState();
@@ -27,7 +26,7 @@ class _CheckListState extends State<CheckList> {
                 child: CheckboxListTile(
                   controlAffinity: ListTileControlAffinity.leading,
                   activeColor: Colors.white,
-                  checkColor: Colors.pinkAccent,
+                  checkColor: widget.checkColor,
                   value: widget.checks[index].checked,
                   title: Text(
                     widget.checks[index].title,

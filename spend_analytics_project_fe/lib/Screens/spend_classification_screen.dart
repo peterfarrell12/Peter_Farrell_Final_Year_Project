@@ -21,8 +21,10 @@ class _SpendClassificationScreenState extends State<SpendClassificationScreen> {
     Check(title: "Step Four", description: "How To Do Step 4"),
   ];
   String title = "Spend Classification";
-  String description = "This is The Spend Classifier Description";
+  String description = "The Invoice Extractor Works In Three Stages , Uploading, Validating and Downloading. \nAll Below Boxes Must Be Checked In Order For The Invoice Extractor To Work, Once These Are Checked The ZIP File Can Be Uploaded. Once Uploaded And Process You Will Automatically Be Sent To The Rossum Elis Validation Page Where You Can Validate The Data Coming From The Invoices. Once The Data Is Validated, It Can Be Downloaded From Here! Happy Extracting!";
   Color color = Colors.blueAccent;
+    String bText = "Classify My Data!";
+
 
       void _updateCheck(bool value){
       setState(() {
@@ -31,6 +33,6 @@ class _SpendClassificationScreenState extends State<SpendClassificationScreen> {
     }
   @override
   Widget build(BuildContext context) {
-    return PageBuilder(title: title, description: description, invoiceChecks: _invoiceChecks, color: color, updateCheck: _updateCheck,);
+    return PageBuilder(title: title, description: description, invoiceChecks: _invoiceChecks, color: color, updateCheck: _updateCheck,buttonText: bText,);
   }
 }

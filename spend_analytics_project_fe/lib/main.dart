@@ -6,6 +6,7 @@ import 'package:mobile_sidebar/mobile_sidebar.dart';
 import 'Screens/home_screen.dart';
 import 'Screens/project_home_screen.dart';
 import 'Screens/projects_screen.dart';
+import 'Screens/dashboard_screen.dart';
 
 
 
@@ -23,8 +24,8 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
-        brightness: Brightness.dark,
         unselectedWidgetColor: Colors.grey,
+        primaryColor: Color(0xff3A3F54),
         // See https://github.com/flutter/flutter/wiki/Desktop-shells#fonts
         fontFamily: 'Roboto',
       ),
@@ -83,7 +84,7 @@ class _Screens_OutlineState extends State<Screens_Outline> {
             color: Colors.blueGrey,
             title: 'Reporting',
             subtitle: 'History of Results',
-            child: ProjectHome(),
+            child: DashboardScreen(),
           ),
           MenuItem(
             icon: Icons.settings,
