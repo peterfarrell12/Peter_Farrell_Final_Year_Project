@@ -5,7 +5,8 @@ import '../Screens/project_home_screen.dart';
 
 class SpendClassificationScreen extends StatelessWidget {
 
-  
+
+  SpendClassificationScreen();
 
   @override
   Widget build(BuildContext context) {

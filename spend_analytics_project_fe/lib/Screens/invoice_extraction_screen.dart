@@ -5,7 +5,7 @@ import '../Models/project.dart';
 
 class InvoiceExtractionScreen extends StatelessWidget {
 
-  
+
 
   @override
   Widget build(BuildContext context) {

@@ -9,7 +9,23 @@ class ProjectHome extends StatefulWidget {
 }
 
 class _ProjectHomeState extends State<ProjectHome> {
-  var currentPage = InvoiceExtractionScreen();
+   void onAddButtonTapped(int index) {
+
+  // use this to animate to the page
+  pageController.animateToPage(index);
+
+  // or this to jump to it without animating
+  pageController.jumpToPage(index);
+}
+
+
+
+
+
+  PageController pageController = PageController(
+    initialPage: 0,
+    keepPage: true,
+  );
   @override
   Widget build(BuildContext context) {
     return Material(
@@ -57,7 +73,7 @@ class _ProjectHomeState extends State<ProjectHome> {
                     Container(
                       padding: EdgeInsets.all(5),
                       width: double.infinity,
-                      height: 40,
+                      height: MediaQuery.of(context).size.height * 0.065,
                       decoration: BoxDecoration(
                           borderRadius: BorderRadius.all(
                             Radius.circular(15),
@@ -76,7 +92,7 @@ class _ProjectHomeState extends State<ProjectHome> {
                       )),
                     ),
                     SizedBox(
-                      height: 50,
+                      height: MediaQuery.of(context).size.height * 0.08,
                     ),
                     Expanded(
                       child: Container(
@@ -86,12 +102,10 @@ class _ProjectHomeState extends State<ProjectHome> {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: <Widget>[
                             GestureDetector(
-                              onTap: () {
-                                setState(() {
-                                  currentPage = InvoiceExtractionScreen();
-                                });
+                              onTap: (){
+                                pageController.jumpToPage(0);
                               },
-                              child: Card(
+                                                          child: Card(
                                 shape: RoundedRectangleBorder(
                                     borderRadius:
                                         BorderRadius.all(Radius.circular(15))),
@@ -100,57 +114,68 @@ class _ProjectHomeState extends State<ProjectHome> {
                                 color: Colors.pinkAccent,
                                 child: Container(
                                   width: double.infinity,
-                                  height: 70,
+                                    height: MediaQuery.of(context).size.height / 9,
+                                  
                                   decoration: BoxDecoration(
                                       borderRadius: BorderRadius.all(
                                           Radius.circular(15))),
                                   child: Center(
                                       child: Text(
-                                    "INVOICE EXTRACTION",
+                                        "Invoice Extraction",
                                     style:
                                         TextStyle(fontWeight: FontWeight.bold),
                                   )),
                                 ),
                               ),
                             ),
-                            Card(
+                            GestureDetector(
+                              onTap: (){
+                                pageController.jumpToPage(1);
+                              },
+                                                          child: Card(
+                                  shape: RoundedRectangleBorder(
+                                      borderRadius:
+                                          BorderRadius.all(Radius.circular(15))),
+                                  elevation: 5,
+                                  margin: EdgeInsets.all(10),
+                                  color: Colors.blueAccent,
+                                  child: Container(
+                                    width: double.infinity,
+                                    height: MediaQuery.of(context).size.height / 9,
+                                    decoration: BoxDecoration(
+                                        borderRadius:
+                                            BorderRadius.all(Radius.circular(15))),
+                                    child: Center(
+                                        child: Text(
+                                      "Spend Classification",
+                                      style: TextStyle(fontWeight: FontWeight.bold),
+                                    )),
+                                  ),
+                                ),
+                            ),
+                            GestureDetector(
+                              onTap: (){
+                                pageController.jumpTo(2);
+                              },
+                                                          child: Card(
                                 shape: RoundedRectangleBorder(
                                     borderRadius:
                                         BorderRadius.all(Radius.circular(15))),
                                 elevation: 5,
                                 margin: EdgeInsets.all(10),
-                                color: Colors.blueAccent,
+                                color: Colors.greenAccent,
                                 child: Container(
                                   width: double.infinity,
-                                  height: 70,
+                                  height: MediaQuery.of(context).size.height / 9,
                                   decoration: BoxDecoration(
                                       borderRadius:
                                           BorderRadius.all(Radius.circular(15))),
                                   child: Center(
                                       child: Text(
-                                    "SPEND CLASSIFICATION",
+                                    "Reporting",
                                     style: TextStyle(fontWeight: FontWeight.bold),
                                   )),
                                 ),
-                              ),
-                            Card(
-                              shape: RoundedRectangleBorder(
-                                  borderRadius:
-                                      BorderRadius.all(Radius.circular(15))),
-                              elevation: 5,
-                              margin: EdgeInsets.all(10),
-                              color: Colors.greenAccent,
-                              child: Container(
-                                width: double.infinity,
-                                height: 70,
-                                decoration: BoxDecoration(
-                                    borderRadius:
-                                        BorderRadius.all(Radius.circular(15))),
-                                child: Center(
-                                    child: Text(
-                                  "REPORTING",
-                                  style: TextStyle(fontWeight: FontWeight.bold),
-                                )),
                               ),
                             ),
                           ],
@@ -169,11 +194,11 @@ class _ProjectHomeState extends State<ProjectHome> {
                     color: Colors.white),
                 child: PageView(
                   physics: NeverScrollableScrollPhysics(),
-                  controller: PageController(),
+                  controller: pageController,
                   children: <Widget>[
                     InvoiceExtractionScreen(),
                     SpendClassificationScreen(),
-                    ReportingScreen()
+                    ReportingScreen(),
                   ],
                   
                 ),
