@@ -6,7 +6,9 @@ import 'package:mobile_sidebar/mobile_sidebar.dart';
 import 'Screens/home_screen.dart';
 import 'Screens/project_home_screen.dart';
 import 'Screens/projects_screen.dart';
-import 'Screens/dashboard_screen.dart';
+import 'Screens/charts_screen.dart';
+
+//export ENABLE_FLUTTER_DESKTOP=true
 
 
 
@@ -82,9 +84,9 @@ class _Screens_OutlineState extends State<Screens_Outline> {
           MenuItem(
             icon: Icons.pie_chart,
             color: Colors.blueGrey,
-            title: 'Reporting',
+            title: 'Dashboards',
             subtitle: 'History of Results',
-            child: DashboardScreen(),
+            child: ChartsScreen(),
           ),
           MenuItem(
             icon: Icons.settings,

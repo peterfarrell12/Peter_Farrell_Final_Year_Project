@@ -6,7 +6,7 @@ import '../Models/check.dart';
 import '../Widgets/check_list.dart';
 import 'package:flutter/services.dart';
 import 'package:path_provider/path_provider.dart';
-import '../Screens/dashboard_screen.dart';
+import '../Screens/charts_screen.dart';
 
 class PageBuilder extends StatefulWidget {
   final Function updateCheck;
@@ -113,7 +113,7 @@ class _PageBuilderState extends State<PageBuilder> {
                             onPressed: () {
                                 Navigator.push(
     context,
-    MaterialPageRoute(builder: (context) => DashboardScreen()),
+    MaterialPageRoute(builder: (context) => ChartsScreen()),
   );
                             },
                           )
